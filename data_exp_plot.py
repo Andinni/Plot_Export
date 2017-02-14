@@ -12,11 +12,11 @@ from matplotlib.backends.backend_qt4agg import (
 
 
 class MainWindow(QtGui.QWidget):
-    def __init__(self):
+    def __init__(self,title):
         super(MainWindow,self).__init__()
-        self.initUI()
+        self.initUI(title)
 
-    def initUI(self): 
+    def initUI(self,title): 
         QtGui.QToolTip.setFont(QtGui.QFont('SansSerif', 10))        
         
         self.mplvl = QtGui.QVBoxLayout() 
@@ -29,7 +29,7 @@ class MainWindow(QtGui.QWidget):
         self.setLayout(self.mplvl)   
         
         self.setGeometry(500, 400, 600, 400)
-        self.setWindowTitle('Simple Plotter')   
+        self.setWindowTitle(title)   
         self.show()
 #        x = np.linspace(0,10)
 #        y = np.linspace(0,20)
